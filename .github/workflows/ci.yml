@@ -342,8 +342,8 @@ jobs:
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
           tags: ${{ steps.prepare.outputs.tags }}
-          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/paperless-ngx:buildcache
-          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/paperless-ngx:buildcache,mode=max
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
       -
         name: Inspect image
         run: |
